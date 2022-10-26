@@ -1,18 +1,19 @@
 import React from 'react';
 import LeftSideNav from './LeftSideNav/LeftSideNav';
-import RightSideCard from './RightSideCard/RightSideCard';
+import RightSideCards from './RightSideCard/RightSideCards';
 
 const Courses = () => {
     return (
         <div>
-            <div className='grid lg:grid-cols-2'>
-            <div>
+            <div class="grid  lg:grid-cols-3  gap-4">
+  
+            <div class="...">
                 <LeftSideNav></LeftSideNav>
             </div>
-            <div>
-                <RightSideCard></RightSideCard>
-            </div>
-            </div>
+  <div class="col-span-2 ...">
+   <RightSideCards></RightSideCards>
+  </div>
+  </div>
         </div>
     );
 };

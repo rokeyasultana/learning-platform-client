@@ -10,15 +10,18 @@ const LeftSideNav = () => {
         fetch(`http://localhost:5000/courses`)
         .then(res => res.json())
         .then(data => setCourses(data));
-    },[])
-    return (
-        <div className=' ml-10 mr-20'>
-            <h2 className='text-2xl font-bold text-purple-500 text-center'>All Courses</h2>
-            <div className='justify-center border border-purple-500 bg-base-100 rounded-box '>
-                {
-                    courses.map(course =><p className='mt-5' key={course.id}>
+    },[]);
 
-<Link >{course.courseName}</Link>
+    
+    return (
+        <div className=' place-items-center  ml-10 mr-20 mt-20'>
+            <h2 className=' text-3xl font-bold text-purple-500 text-center mb-5'>List of Courses</h2>
+            <div className=' mt-10 border  border-purple-500 bg-base-100 rounded-box mb-10'>
+                {
+                    courses.map(course =><p className='mt-10 ml-10 mb-5 hover:text-purple-400 hover:underline ' key={course.id}>
+
+                    <Link >{course.courseName}</Link>
+
                     </p>)
                   
                 }

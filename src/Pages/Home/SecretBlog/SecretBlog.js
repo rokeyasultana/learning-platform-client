@@ -1,4 +1,6 @@
 import React from 'react';
+import {FaArrowRight } from "react-icons/fa";
+
 
 const SecretBlog = () => {
     return (
@@ -33,7 +35,7 @@ const SecretBlog = () => {
        </div>
     <h2 class="card-title">Insights on How to <br></br>Improve Your Teaching.</h2>
     <div class="card-actions justify-end">
-    <p className='text-purple-500'>Read more</p>
+    <p className='text-purple-500'>Read more <FaArrowRight /></p>
     </div>
   </div>
 </div></div>
@@ -48,7 +50,7 @@ const SecretBlog = () => {
        </div>
     <h2 class="card-title">Learning Python For Data<br></br>Analysis</h2>
     <div class="card-actions justify-end">
-    <p className='text-purple-500'>Read more</p>
+    <p className='text-purple-500'>Read more <FaArrowRight /></p>
     </div>
   </div>
 </div></div> 

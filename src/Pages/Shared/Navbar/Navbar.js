@@ -129,7 +129,6 @@ FAQ
                     <li>
                       <Link
                         to='/'
-          
                         className='font-medium tracking-wide text-purple-700  transition-colors duration-200 hover:text-deep-purple-accent-400'
                       >
                        Home

@@ -6,6 +6,7 @@ import Courses from '../Pages/Courses/Courses';
 import Blog from '../Pages/Blog/Blog';
 import Login from '../Pages/Login/Login/Login';
 import Faq from '../Pages/Faq/Faq';
+import CourseDetails from '../Pages/CourseDetails/CourseDetails';
 
 export const routes = createBrowserRouter([
     {
@@ -24,9 +25,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader: () => fetch(``)
-
-            
+            },
+            {
+                path: '/course/:id',
+                element: <CourseDetails></CourseDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
             },
           
             {

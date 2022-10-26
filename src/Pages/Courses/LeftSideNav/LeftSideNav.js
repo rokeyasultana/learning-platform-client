@@ -20,8 +20,7 @@ const LeftSideNav = () => {
                 {
                     courses.map(course =><p className='mt-10 ml-10 mb-5 hover:text-purple-400 hover:underline ' key={course.id}>
 
-                    <Link >{course.courseName}</Link>
-
+                    <Link to={`/course/${course.id}`} >{course.courseName}</Link>
                     </p>)
                   
                 }

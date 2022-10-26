@@ -1,7 +1,14 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const RightSideCard = ({coursesCard}) => {
     const{id,courseName,cost,img,details} = coursesCard;
+    const navigate = useNavigate();
+    const navigateToCourseDetails = id => {
+
+        navigate (`/course/${id}`);
+          }
+
+
     return (
         <div>
           <div class=" card w-80 border border-purple-500 mt-10  mb-10 shadow-xl">
@@ -13,7 +20,7 @@ const RightSideCard = ({coursesCard}) => {
     <p className='text-left'>{details}</p>
     <h2 className='text-left font-semibold'>Course Fee: {cost}</h2>
     <div class="card-actions">
-      <button class="btn btn-outline btn-primary">Course Details</button>
+      <button  onClick={  ()=>navigateToCourseDetails(id)} class="btn btn-outline btn-primary">Course Details</button>
     </div>
   </div>
 </div>

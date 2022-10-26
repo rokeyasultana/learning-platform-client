@@ -28,6 +28,14 @@ const Blog = () => {
     <p> The react private route component renders child components (children) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.</p>
   </div>
 </div>
+            <div tabindex="0" class="collapse collapse-arrow border border-purple-500 bg-base-100 rounded-box mt-5">
+  <div class="collapse-title text-xl font-medium text-purple-400">
+  What is Node? How does Node work?
+  </div>
+  <div class="collapse-content"> 
+    <p>It is a used as backend service where javascript works on the server-side of the application. Node allows developers to write JavaScript code that runs directly in a computer process itself instead of in a browser. Node can, therefore, be used to write server-side applications with access to the operating system, file system, and everything else required to build fully-functional applications. </p>
+  </div>
+</div>
         </div>
     );
 };

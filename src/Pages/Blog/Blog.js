@@ -17,7 +17,7 @@ const Blog = () => {
   Why are you using firebase? What other options do you have to implement authentication?
   </div>
   <div class="collapse-content"> 
-    <p> </p>
+    <p> Firebase Authentication build secure authentication systems easy, while improving the sign-in and on boarding experience for end users. It’s very good complete back-end solution. With firebase you can do all sort of authentication most common ones are by username email and password. But you can of course use log in with twitter login with Facebook login, GitHub login and all the things that you can imagine which are most popular. There are lots of firebase alternative to implement authentication. Like: Pares, Supabase, Kuzzle, Back4pp.They also provide authentication systems.</p>
   </div>
 </div>
             <div tabindex="0" class="collapse collapse-arrow border border-purple-500 bg-base-100 rounded-box mt-5">

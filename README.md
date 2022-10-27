@@ -1,5 +1,5 @@
 ### Website 
-Program Source is a simple React app built with React & React Router Dom.
+Program Source is a simple React app built with React & React Router Dom. In this website you can see different type of courses. You can enroll your desire course after payment.
 
 #### Live link
 <a href='https://meek-stroopwafel-3563e2.netlify.app/'>Program Source</a>

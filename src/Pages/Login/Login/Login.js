@@ -22,7 +22,10 @@ providerLogin(googleProvider)
 .then(result =>{
   navigate(from, { replace: true });
 })
-.catch(error => console.error(error));
+.catch(error => {console.error(error)
+  setError(error.message);
+});
+
 };
 
     const handleSubmit = event =>{
@@ -36,6 +39,7 @@ providerLogin(googleProvider)
         .then((result) => {
           setError(null);
           form.reset();
+          setError('')
           navigate(from, { replace: true });
         })
         .catch((error) => setError(error.message));
@@ -62,13 +66,13 @@ providerLogin(googleProvider)
           <label class="label">
             <span class="label-text">Email</span>
           </label>
-          <input type="text" placeholder="email" class="input input-bordered"  required/>
+          <input name='email' type="text" placeholder="email" class="input input-bordered"  required/>
         </div>
         <div class="form-control">
           <label class="label">
             <span class="label-text">Password</span>
           </label>
-          <input type="text" placeholder="password" class="input input-bordered" required />
+          <input name='password' type="text" placeholder="password" class="input input-bordered" required />
           <label class="label">
             <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -79,7 +83,7 @@ providerLogin(googleProvider)
         <small>Don't you have account? <Link to='/signUp'><span className='text-purple-400'>Please Sign Up</span></Link></small>
        
       </div>
-   
+      <p className='text-red-500'>{error}</p>
     </form>
   </div>
 </div>

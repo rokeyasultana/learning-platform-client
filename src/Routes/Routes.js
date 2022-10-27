@@ -11,6 +11,7 @@ import CourseDetails from '../Pages/CourseDetails/CourseDetails';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import CheckOut from '../Pages/CheckOut/CheckOut';
 import SignUp from '../Pages/Login/SignUp/SignUp';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 export const routes = createBrowserRouter([
     {
@@ -39,7 +40,7 @@ export const routes = createBrowserRouter([
             {
                 path: "/checkout/:id",
                 element: (
-                 <CheckOut></CheckOut>
+               <PrivateRoute>  <CheckOut></CheckOut></PrivateRoute>
                 ),
                 loader: ({ params }) =>
                   fetch(`https://learning-website-server-rokeyasultana.vercel.app/courses/${params.id}`),

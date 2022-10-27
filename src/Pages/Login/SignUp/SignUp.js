@@ -1,43 +1,58 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
-  const navigate = useNavigate();
-  const {providerLogin, logInWithEmailPassword,gitHubLogIn} = useContext(AuthContext)
+  const [error,setError] =useState('')
+  const { googleLogIn, gitHubLogIn, createUser, updateUserProfile } =
+  useContext(AuthContext);
 
-  const googleProvider = new GoogleAuthProvider()
-  const location = useLocation();
-  
-  const from = location.state?.from?.pathname || "/";
-const handleGoogleSignIn = ()=> {
-providerLogin(googleProvider)
-.then(result =>{
-  navigate(from, { replace: true });
-})
-.catch(error => console.error(error));
-};
+const navigate = useNavigate();
 
-const handleSubmit = event =>{
+const handleSubmit = (event) => {
   event.preventDefault();
   const form = event.target;
   const name = form.name.value;
   const photoURL = form.photoURL.value;
   const email = form.email.value;
   const password = form.password.value;
-  console.log(name,photoURL);
-
-}
-const handleGigHubLogIn = () => {
-  gitHubLogIn()
+  createUser(email, password)
     .then((result) => {
-      navigate(from, { replace: true });
+      form.reset();
+      setError('')
+      profileUpdate(name,photoURL);
+      navigate("/");
+    })
+    .catch((error) => {
+      console.error(error);
+    setError(error.message)
+    
+    });
+};
+
+const handleGoogleSignIn = () => {
+  googleLogIn()
+    .then((result) => {
+      navigate("/");
     })
     .catch((error) => console.error(error));
 };
 
+const handleGitHubLogIn = () => {
+  gitHubLogIn()
+    .then((result) => {
+      navigate("/");
+    })
+    .catch((error) => console.error(error));
+};
+
+const profileUpdate = (name, photoURL) => {
+  updateUserProfile(name, photoURL)
+    .then(() => {})
+    .catch((error) => console.error(error));
+};
     return (
         <div>
             <div >
@@ -54,27 +69,27 @@ const handleGigHubLogIn = () => {
             <span class="label-text">Name</span>
 
           </label>
-          <input type="text" placeholder="your name" class="input input-bordered" />
+          <input name='name' type="text" placeholder="your full name" class="input input-bordered" />
         </div>
         <div class="form-control">
           <label class="label">
             <span class="label-text">PhotoURL</span>
 
           </label>
-          <input type="text" placeholder="photo URL" class="input input-bordered" />
+          <input name='photoURL' type="text" placeholder="photo URL" class="input input-bordered" />
         </div>
         <div class="form-control">
           <label class="label">
             <span class="label-text">Email</span>
           </label>
-          <input type="text" placeholder="email" class="input input-bordered" required />
+          <input name='email' type="text" placeholder="email" class="input input-bordered" required />
         </div>
         
         <div class="form-control">
           <label class="label">
             <span class="label-text">Password</span>
           </label>
-          <input type="text" placeholder="password" class="input input-bordered" required/>
+          <input name='password' type="text" placeholder="password" class="input input-bordered" required/>
           <label class="label">
             <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -84,6 +99,7 @@ const handleGigHubLogIn = () => {
           <button type='submit' class="btn btn-primary">Sign Up</button>
         </div>
         </form>
+        <p className='text-red-500'>{error}</p>
         <small>Already have an account?<Link to='/login'><span className='text-purple-400'> Please Login</span></Link></small>
       </div>
 </div>
@@ -91,7 +107,7 @@ const handleGigHubLogIn = () => {
    <button  onClick={handleGoogleSignIn} class="btn btn-outline btn-primary">Google login</button>
    </div>
    <div className='text-center mt-5 mb-3'>
-   <button   onClick={handleGigHubLogIn}class="btn btn-outline btn-primary">Github login</button>
+   <button   onClick={handleGitHubLogIn}class="btn btn-outline btn-primary">Github login</button>
    </div>
     </div>
   </div>

@@ -6,13 +6,14 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [error, setError] = useState(null);
  
 
 
     const {providerLogin, logInWithEmailPassword,gitHubLogIn} = useContext(AuthContext)
 
-    const location = useLocation();
+ 
   const from = location.state?.from?.pathname || "/";
 
     const googleProvider = new GoogleAuthProvider()

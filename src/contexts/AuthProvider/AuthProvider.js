@@ -23,6 +23,7 @@ const AuthProvider = ({ children }) => {
 
     
     const createUser = (email, password) => {
+      setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const logInWithEmailPassword = (email, password) => {
@@ -35,6 +36,7 @@ const AuthProvider = ({ children }) => {
         })
       }
     const signIn = (email, password) => {
+      setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
     const gitHubLogIn = () => {
@@ -43,12 +45,14 @@ const AuthProvider = ({ children }) => {
       }
       
     const logOut = () => {
+      setLoading(true);
         return signOut(auth);
     }
 
     useEffect(()=>{
   const unsubscribe  = onAuthStateChanged(auth,(currentUser)=>{
           setUser(currentUser) ;
+          setLoading(false)
         });
 
         return () => {
@@ -56,7 +60,7 @@ const AuthProvider = ({ children }) => {
         }
     })
    
-    const authInfo = { user,providerLogin,gitHubLogIn,createUser, signIn,logOut,updateUserProfile,logInWithEmailPassword };
+    const authInfo = { user,loading,providerLogin,gitHubLogIn,createUser, signIn,logOut,updateUserProfile,logInWithEmailPassword };
 
     return (
         <div>

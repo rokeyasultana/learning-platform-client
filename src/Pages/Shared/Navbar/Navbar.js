@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const {user} = useContext(AuthContext);
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <div>
              <div>
@@ -56,6 +61,7 @@ const Navbar = () => {
 FAQ
             </Link>
           </li>
+          <li>{user?.displayName}</li>
           <li>
             <Link
               to='/login'

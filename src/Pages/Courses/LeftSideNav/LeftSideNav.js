@@ -14,7 +14,7 @@ const LeftSideNav = () => {
 
     
     return (
-        <div className=' place-items-center  ml-10 mr-20 mt-20'>
+        <div data-aos="fade-up" data-aos-duration="1500" className=' place-items-center  ml-10 mr-20 mt-20'>
             <h2 className=' text-3xl font-bold text-purple-500 text-center mb-5'>List of Courses</h2>
             <div className=' mt-10 border  border-purple-500 bg-base-100 rounded-box mb-10'>
                 {

@@ -10,13 +10,13 @@ const CheckOut = () => {
     const checkOut = useLoaderData();
     const { courseName,img,cost,duration,details,start,courseType } = checkOut;
 
-    const notify = () => toast.success('Enroll Successfully');
+    const notify = () => toast.success('Checkout Successfully');
     return (
         <div>
         
             <h2 className='text-center mt-5 text-5xl font-semibold'>Enroll Now</h2>
 
-          <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
+          <div data-aos="zoom-in-up" data-aos-duration="1500" className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
           
             <div >
             <div className='text-center mt-6'>
@@ -83,7 +83,7 @@ const CheckOut = () => {
             </div>
           </div>
 
-         <div className='text-center mb-10'>
+         <div data-aos="zoom-in-up" data-aos-duration="1500" className='text-center mb-10'>
          <button onClick={notify} class="btn btn-success w-96">CheckOut</button>
          </div>
 

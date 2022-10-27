@@ -10,7 +10,7 @@ const RightSideCards = () => {
     },[]);
 
     return (
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1500">
             <div className='mt-20'>
                 <h2 className='text-center font-bold text-3xl text-purple-500'>Courses Information</h2>
             </div>

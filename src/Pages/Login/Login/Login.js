@@ -56,10 +56,13 @@ providerLogin(googleProvider)
     return (
         <div >
             <div>
- 
+            <div>
+    <h2 className='text-center text-3xl mt-10 font-semibold'>Login</h2>
+   </div>
 
             <div class="flex mx-auto card w-96  shadow-xl">
-  <div class="card-body">
+         
+  <div data-aos="fade-up" data-aos-duration="1500" class="card-body">
    
   <form onSubmit={handleSubmit} >
       <div >
@@ -90,10 +93,10 @@ providerLogin(googleProvider)
 </div>
 
    <div className='text-center mt-5 mb-3'>
-   <button  onClick={handleGoogleSignIn} class="btn btn-outline btn-primary">Google login</button>
+   <button  onClick={handleGoogleSignIn} class="btn btn-outline ">Google login</button>
    </div>
    <div className='text-center mt-5 mb-3'>
-   <button   onClick={handleGigHubLogIn}class="btn btn-outline btn-primary">Github login</button>
+   <button   onClick={handleGigHubLogIn}class="btn btn-outline ">Github login</button>
    </div>
 
   </div>

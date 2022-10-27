@@ -55,9 +55,9 @@ const profileUpdate = (name, photoURL) => {
 };
     return (
         <div>
-            <div >
+            <div data-aos="fade-up" data-aos-duration="1500" >
   <div>
-    <h2 className='Text-3xl text-center'> Sign Up</h2>
+    <h2 className='text-3xl font-semibold text-center mt-10'> Sign Up</h2>
     <div class="flex mx-auto card w-96  shadow-xl">
    
 
@@ -95,8 +95,8 @@ const profileUpdate = (name, photoURL) => {
           </label>
         </div>
         
-        <div class="form-control mt-6">
-          <button type='submit' class="btn btn-primary">Sign Up</button>
+        <div class="form-control mt-6 ">
+          <button type='submit' class="btn btn-primary ">Sign Up</button>
         </div>
         </form>
         <p className='text-red-500'>{error}</p>
@@ -104,10 +104,10 @@ const profileUpdate = (name, photoURL) => {
       </div>
 </div>
 <div className='text-center mt-5 mb-3'>
-   <button  onClick={handleGoogleSignIn} class="btn btn-outline btn-primary">Google login</button>
+   <button  onClick={handleGoogleSignIn} class="btn btn-outline ">Google login</button>
    </div>
    <div className='text-center mt-5 mb-3'>
-   <button   onClick={handleGitHubLogIn}class="btn btn-outline btn-primary">Github login</button>
+   <button   onClick={handleGitHubLogIn}class="btn btn-outline ">Github login</button>
    </div>
     </div>
   </div>

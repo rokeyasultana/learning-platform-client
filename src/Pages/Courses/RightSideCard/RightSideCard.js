@@ -10,7 +10,7 @@ const RightSideCard = ({coursesCard}) => {
 
 
     return (
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1500">
           <div class=" card w-80 border border-purple-500 mt-10  mb-10 shadow-xl">
   <figure class="px-10 pt-10">
     <img style={{height:"150px"}} src={img} alt="Shoes" class="rounded-xl" />

@@ -36,7 +36,7 @@ const Navbar = () => {
                             }
           </li>
 
-  <li className='mt-1'>{user?.uid?  <button onClick={handleLogOut} class="btn btn-ghost">
+  <li className='mt-2'>{user?.uid?  <button onClick={handleLogOut} class="btn btn-ghost text-purple-400">
  
     
     Sign out</button> :<Link to="/login">Login</Link>}</li>

@@ -15,10 +15,10 @@ const {id,courseName,img,cost,duration,start,details,courseType} = courseData;
           <div ref={ref}>
             <div >
               <h2 className='text-center mt-5 mb-5 font-semibold text-4xl'>Detail Information about course</h2>
-              <p className='text-purple-400 text-center text-xl '>Are you ready to join your favorite course..?</p>
+              <p className='text-purple-400 text-center text-xl '>Are you ready to join your desire course..?</p>
              
             </div>
-         
+            
             <div class="card mx-auto w-96 bg-base-100 shadow-xl mt-10 mb-10">
             <Pdf targetRef={ref} filename="code-example.pdf">
         {({ toPdf }) => <button className='text-black btn btn-outline btn-info' onClick={toPdf} >Download Pdf</button>}

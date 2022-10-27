@@ -18,7 +18,7 @@ const RightSideCard = ({coursesCard}) => {
   <div class="card-body items-center text-center">
     <h2 class="card-title">{courseName}</h2>
     <p className='text-left'>{details}</p>
-    <h2 className='text-left font-semibold'>Course Fee: {cost}</h2>
+    <h2 className='text-left font-semibold'>Course Fee: {cost}$</h2>
     <div class="card-actions">
       <button  onClick={  ()=>navigateToCourseDetails(id)} class="btn btn-outline btn-primary">Course Details</button>
     </div>

@@ -66,7 +66,7 @@ const profileUpdate = (name, photoURL) => {
 
         <div class="form-control">
           <label class="label">
-            <span class="label-text">Name</span>
+            <span class="label-text">Full Name</span>
 
           </label>
           <input name='name' type="text" placeholder="your full name" class="input input-bordered" />

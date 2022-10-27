@@ -73,9 +73,9 @@ const CheckOut = () => {
   <div class="card-body">
     <h2 class="card-title">{courseName}</h2>
     <p>Course Type: {courseType}</p>
-    <p className='text-purple-400'>Course Fee: {cost}</p>
+    <p className='text-purple-400'>Course Fee: {cost} $</p>
     <p> {details}</p>
-    <p>Course Duration: {duration}</p>
+    <p>Course Duration: {duration} month</p>
     <p>Start: {start}</p>
     
   </div>

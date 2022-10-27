@@ -3,7 +3,7 @@ import React from 'react';
 const GuidingBanner = () => {
     return (
         <div>
-            <div className='bg-base-100 shadow-purple-500 drop-shadow-md hover:drop-shadow-xl justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ml-20 mr-20 mb-[-60px] mt-10'>
+            <div data-aos="zoom-in-up" data-aos-duration="1500" className='bg-base-100 shadow-purple-500 drop-shadow-md hover:drop-shadow-xl justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ml-20 mr-20 mb-[-60px] mt-10'>
             <div>
                 <img src="https://quomodosoft.com/html/bisy/assets/images/home/2.png" alt="" />
             </div>

@@ -14,6 +14,7 @@ import SignUp from '../Pages/Login/SignUp/SignUp';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 export const routes = createBrowserRouter([
+    
     {
         path: '/',
         element: <Main></Main>,

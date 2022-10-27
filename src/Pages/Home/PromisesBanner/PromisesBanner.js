@@ -3,7 +3,7 @@ import React from 'react';
 const PromisesBanner = () => {
     return (
         <div>
-                <div className='grid lg:grid-cols-2  sm:grid-cols-1 md:grid-cols-1 place-content-center '>
+                <div data-aos="fade-up" data-aos-duration="1900"  className='grid lg:grid-cols-2  sm:grid-cols-1 md:grid-cols-1 place-content-center '>
                 <div  className='mt-10 mr-20 ml-20 '>
 <img   src="https://quomodosoft.com/html/bisy/assets/images/home/1.png" alt="" />
 

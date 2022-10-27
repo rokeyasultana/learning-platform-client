@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='mt-14 mb-20 ml-14 mr-14'>
+        <div data-aos="fade-up" data-aos-duration="1900"   className='mt-14 mb-20 ml-14 mr-14'>
           <img style={{height: "350px"}} className='rounded mx-auto d-block mb-10' src="https://img.freepik.com/premium-vector/blog-authors-writing-articles_179970-1523.jpg?w=2000" alt="" />
             
             <div tabindex="0" class="collapse collapse-arrow border border-purple-500 bg-base-100 rounded-box">

@@ -5,12 +5,12 @@ import {FaArrowRight } from "react-icons/fa";
 const SecretBlog = () => {
     return (
         <div >
-           <div >
+           <div data-aos="fade-up" data-aos-duration="1900"   >
             <h2 className='text-center text-2xl mt-14 text-purple-400'>Secrets of</h2>
             <h2 className='text-center font-bold text-3xl'>Learning Revealed in Blogs</h2>
            </div>
            
-           <div className='justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ml-20 mr-20 mt-14'>
+           <div data-aos="fade-up" data-aos-duration="1900"   className='justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ml-20 mr-20 mt-14'>
            <div><div class="card w-96 bg-base-100 shadow-xl shadow-purple-50 drop-shadow-md hover:drop-shadow-xl ">
   <figure><img src="https://quomodosoft.com/html/bisy/assets/images/home/blog/1.jpg" alt="" /></figure>
   <div class="card-body">

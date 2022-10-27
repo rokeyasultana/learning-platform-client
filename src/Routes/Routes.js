@@ -5,9 +5,12 @@ import Home from '../Pages/Home/Home/Home';
 import Courses from '../Pages/Courses/Courses';
 import Blog from '../Pages/Blog/Blog';
 import Login from '../Pages/Login/Login/Login';
+import SignUP from '../Pages/Login/SignUp/SignUp';
 import Faq from '../Pages/Faq/Faq';
 import CourseDetails from '../Pages/CourseDetails/CourseDetails';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
+import CheckOut from '../Pages/CheckOut/CheckOut';
+import SignUp from '../Pages/Login/SignUp/SignUp';
 
 export const routes = createBrowserRouter([
     {
@@ -33,7 +36,14 @@ export const routes = createBrowserRouter([
                 element: <CourseDetails></CourseDetails>,
                 loader: ({params}) => fetch(`https://learning-website-server-rokeyasultana.vercel.app/courses/${params.id}`)
             },
-          
+            {
+                path: "/checkout/:id",
+                element: (
+                 <CheckOut></CheckOut>
+                ),
+                loader: ({ params }) =>
+                  fetch(`https://learning-website-server-rokeyasultana.vercel.app/courses/${params.id}`),
+              },
             {
                 path: '/blog',
                 element: <Blog></Blog>,
@@ -42,6 +52,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>,
+            },
+            {
+                path: '/signUp',
+                element: <SignUp></SignUp>,
             },
             {
                 path: '/faq',

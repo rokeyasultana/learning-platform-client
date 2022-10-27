@@ -3,15 +3,27 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
+
+import DarkMode from './DarkMode/DarkMode';
+
+
 const Navbar = () => {
-  const {user} = useContext(AuthContext);
-
+  const {user,logOut} = useContext(AuthContext);
+  
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+   
 
+    const handleLogOut = () => {
+     logOut()
+          .then(() => { })
+          .catch(error => console.error(error))
+  }
+  
     return (
         <div>
              <div>
-             <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
+             <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 '>
       <div className='relative flex items-center justify-between'>
         <Link
           to='/'
@@ -61,7 +73,7 @@ const Navbar = () => {
 FAQ
             </Link>
           </li>
-          <li>{user?.displayName}</li>
+         
           <li>
             <Link
               to='/login'
@@ -70,11 +82,34 @@ FAQ
         Login
             </Link>
           </li>
-          <li>
-          
-  <input type="checkbox" class="toggle" checked />
-
+          <li>{user?.photoURL ?
+                                <img className='rounded gap-3'
+                                    style={{ height: '30px' }}
+                                 
+                                    src={user?.photoURL}>
+                                </img>
+                                : <FaUser></FaUser>
+                            }
           </li>
+          <li>{
+                                user?.uid ?
+                                    <>
+                                        <span>{user?.displayName}</span>
+                                        <button class="btn btn-xs" onClick={handleLogOut}>Log out</button>
+                                    </>
+                                    :
+                                    <>
+                                       
+                                      
+                                    </>
+                            }
+                            
+                            </li>
+         
+          <li>
+         <DarkMode></DarkMode>
+          </li>
+          
         </ul>
         <div className='lg:hidden'>
           <button
@@ -174,13 +209,7 @@ FAQ
                      
                     </li>
                     <li>
-                      <Link
-                        to=''
-                       
-                        className='font-medium tracking-wide text-purple-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
-                      >
-               <input type="checkbox" class="toggle" checked />
-                      </Link>
+                    <DarkMode></DarkMode>
                      
                     </li>
                   </ul>

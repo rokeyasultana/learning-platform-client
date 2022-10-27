@@ -8,7 +8,7 @@ const GuidingBanner = () => {
                 <img src="https://quomodosoft.com/html/bisy/assets/images/home/2.png" alt="" />
             </div>
             <div className='mt-10'> 
-                <h2 className='font-bold text-4xl'>You can be your own<br></br>Guiding start with our<br></br>help!</h2>
+                <h2 className='font-bold text-4xl text-left ml-5'>You can be your own<br></br>Guiding start with our<br></br>help!</h2>
             </div>
             <div >
             <button class="btn btn-outline btn-primary mt-14 mb-5">Get Started Now</button> 

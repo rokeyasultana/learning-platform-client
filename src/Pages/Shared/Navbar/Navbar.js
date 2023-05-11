@@ -41,7 +41,7 @@ const Navbar = () => {
     
     Sign out</button> :<Link to="/login">Login</Link>}</li>
     
-  <li><DarkMode></DarkMode></li>
+
 
 
 </>
